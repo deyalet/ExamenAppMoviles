@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:id="@+id/txt_R_tvolumen"
+        android:layout_width="243dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Titulo Volumen"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/img_volumen"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_volumen"
+        android:layout_width="138dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txt_volumen_doi"
+        android:layout_width="203dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toEndOf="@+id/txt_V_doi"
+        app:layout_constraintTop_toBottomOf="@+id/txt_R_tvolumen" />
+
+    <TextView
+        android:id="@+id/txt_fech_volumen"
+        android:layout_width="146dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@+id/txt_V_fech"
+        app:layout_constraintTop_toBottomOf="@+id/txt_volumen_doi" />
+
+    <TextView
+        android:id="@+id/txt_V_doi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="Doi:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/img_volumen"
+        app:layout_constraintTop_toBottomOf="@+id/txt_R_tvolumen" />
+
+    <TextView
+        android:id="@+id/txt_V_fech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:text="F_Publicación"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/img_volumen"
+        app:layout_constraintTop_toBottomOf="@+id/txt_volumen_doi" />
+
+    <Button
+        android:id="@+id/btn_D_edicion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Ediciones"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="157dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
