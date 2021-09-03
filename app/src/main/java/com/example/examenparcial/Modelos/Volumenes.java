@@ -23,7 +23,6 @@ import org.json.JSONObject;
 @Layout(R.layout.item_volumen)
 public class Volumenes {
 
-    // Acciones para cambiar los valores por la API
     @View(R.id.txt_R_tvolumen)
     TextView txtTitulo;
 
@@ -43,32 +42,29 @@ public class Volumenes {
             Intent intent = new Intent(ctx.getApplicationContext(), EdicionActivity.class);
 
             Bundle cambio_app = new Bundle();
-            cambio_app.putString("issue_id", obj_volumen_json.getString("issue_id"));
+            cambio_app.putString("issue_id", obj_json.getString("issue_id"));
             intent.putExtras(cambio_app);
-            ctx.startActivity(intent);
+            ctx.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP));
 
         } catch (JSONException ex) {
         }
     }
 
     Context ctx;
-    JSONObject obj_volumen_json;
+    JSONObject obj_json;
 
-    // Constructor que recibira el context de la aplicación y un JSONObjet
     public Volumenes(Context context, JSONObject item_obj_revista) {
         ctx = context;
-        obj_volumen_json = item_obj_revista;
+        obj_json = item_obj_revista;
     }
 
-    // Lectura de la API y cambiandolo al layout creado
     @Resolve
     protected void onResolved() {
         try {
-            // Html.fromHtml() "Sirve para convertir HTML en texto normal"
-            this.txtTitulo.setText(Html.fromHtml(obj_volumen_json.getString("title")));
-            this.txtFecha.setText(Html.fromHtml(obj_volumen_json.getString("date_published")));
-            this.txtDOI.setText(Html.fromHtml(obj_volumen_json.getString("doi")));
-            Glide.with(ctx).load(obj_volumen_json.getString("cover"))
+            this.txtTitulo.setText(Html.fromHtml(obj_json.getString("title")));
+            this.txtFecha.setText(Html.fromHtml(obj_json.getString("date_published")));
+            this.txtDOI.setText(Html.fromHtml(obj_json.getString("doi")));
+            Glide.with(ctx).load(obj_json.getString("cover"))
                     .into(img_revista);
         } catch (JSONException ex) {
         }
