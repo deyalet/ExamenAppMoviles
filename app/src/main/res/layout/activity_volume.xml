@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".VolumeActivity">
 
-    <com.mindorks.placeholderview.PlaceHolderView
+    <com.mindorks.placeholderview.SwipePlaceHolderView
         android:id="@+id/place_r_volumenes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -36,15 +36,20 @@ public class Ver {
     public void onVolumenViewClick() {
         new PDF().execute();
     }
-
-    @Click(R.id.btnHTML)
-    public void onHTMLViewClick() {
-
-    }
-
     Context ctx;
     JSONObject obj_json;
 
+    @Click(R.id.btnHTML)
+
+    public void onHTMLViewClick() throws JSONException {
+        JSONArray array_galeria = obj_json.getJSONArray("galeys");
+        for (int i = 0; i < array_galeria.length(); i++) {
+            JSONObject object_galeria = array_galeria.getJSONObject(i);
+            String url_string = object_galeria.getString("UrlViewGalley");
+            String nombre = obj_json.getString("section") + "-" + obj_json.getString("publication_id") ;
+
+         }
+    }
     public class PDF extends AsyncTask<Void, Void, Void> {
 
         @Override
